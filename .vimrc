@@ -1,33 +1,18 @@
 " Don't try to be vi compatible
 set nocompatible
 
-" Helps force plugins to load correctly when it is turned back on below
-filetype off
-
-" TODO: Load plugins here (pathogen or vundle)
-
-" Turn on syntax highlighting
-syntax on
-
-" For plugins to load correctly
-filetype plugin indent on
-
-" TODO: Pick a leader key
-" let mapleader = ","
-
-" Security
-set modelines=0
-
-" Show line numbers
-set number
-
-" Show file stats
-set ruler
-
-" Blink cursor on error instead of beeping (grr)
-
-" Encoding
-set encoding=utf-8
+"run script
+nnoremap <F5> :!bash s.sh
+"valgrind
+nnoremap <F6> :!valgrind ./exec
+"make
+nnoremap <F7> :!make
+"compile
+nnoremap <F8> :!g++ -std=c++11 -Wshadow -Wall -o exec *.cpp -O2 -Wno-unused-result
+"build
+nnoremap <F9> :!g++ -std=c++17 -Wshadow -Wall -o exec *.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
+"run
+nnoremap <F10> :!./exec
 
 " Whitespace
 set wrap
