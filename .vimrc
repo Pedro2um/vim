@@ -10,7 +10,7 @@ nnoremap <F7> :!make
 "compile
 nnoremap <F8> :!g++ -std=c++11 -Wshadow -Wall -o exec *.cpp -O2 -Wno-unused-result
 "build
-nnoremap <F9> :!g++ -std=c++17 -Wshadow -Wall -o exec *.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
+nnoremap <F9> :!g++ -std=c++11 -Wshadow -Wall -o exec *.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
 "run
 nnoremap <F10> :!./exec
 
