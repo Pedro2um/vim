@@ -4,7 +4,7 @@ set nocompatible
 "run script
 nnoremap <F5> :!bash s.sh
 "valgrind
-nnoremap <F6> :!valgrind ./exec
+nnoremap <F6> :!valgrind  --leak-check=full  --track-origins=yes ./exec
 "make
 nnoremap <F7> :!make
 "compile
