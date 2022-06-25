@@ -1,6 +1,9 @@
 " Don't try to be vi compatible
-set nocompatible
 
+set hidden
+set number
+set nocompatible
+set wildmenu
 "run script
 nnoremap <F5> :!bash s.sh
 "valgrind
@@ -13,13 +16,14 @@ nnoremap <F8> :!g++ -std=c++11 -Wshadow -Wall -o exec *.cpp -O2 -Wno-unused-resu
 nnoremap <F9> :!g++ -std=c++11 -Wshadow -Wall -o exec *.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
 "run
 nnoremap <F10> :!./exec
-
+set autoindent 
+set smartindent
 " Whitespace
-set wrap
-set textwidth=79
+set nowrap
+"set textwidth=79
 set formatoptions=tcqrn1
 set noshiftround
-
+set tabpagemax=100
 " Cursor motion
 set scrolloff=3
 set backspace=indent,eol,start
@@ -43,6 +47,10 @@ set ttyfast
 set showmode
 set showcmd
 
+
+set foldmethod=indent
+set updatetime=100
+
 " Searching
 nnoremap / /\v
 vnoremap / /\v
@@ -52,6 +60,8 @@ set ignorecase
 set smartcase
 set showmatch
 map <leader><space> :let @/=''<cr> " clear search
+
+
 
 " Remap help key.
 inoremap <F1> <ESC>:set invfullscreen<CR>a
@@ -77,4 +87,4 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
-" colorscheme solarized
+"colorscheme solarized
