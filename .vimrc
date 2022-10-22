@@ -1,21 +1,24 @@
 " Don't try to be vi compatible
-
-set hidden
+set autoread
+set mouse=a
+set path+=**
+"set hidden
 set number
 set nocompatible
 set wildmenu
-"run script
-nnoremap <F5> :!bash s.sh
-"valgrind
-nnoremap <F6> :!valgrind  --leak-check=full  --track-origins=yes ./exec
-"make
-nnoremap <F7> :!make
-"compile
-nnoremap <F8> :!g++ -std=c++11 -Wshadow -Wall -o exec *.cpp -O2 -Wno-unused-result
-"build
-nnoremap <F9> :!g++ -std=c++11 -Wshadow -Wall -o exec *.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
+
+
+set noswapfile
+
+
+"compile c++
+nnoremap <F5> :!g++ -std=c++17 -Wshadow -Wall -o a *.cpp -O2 -Wno-unused-result
+"build c++
+nnoremap <F4> :!g++ -std=c++17 -Wshadow -Wall -o a *.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
 "run
-nnoremap <F10> :!./exec
+nnoremap <F2> ./a
+"clear
+nnoremap <F3> :!clear
 set autoindent 
 set smartindent
 " Whitespace
@@ -29,6 +32,8 @@ set scrolloff=3
 set backspace=indent,eol,start
 set matchpairs+=<:> " use % to jump between pairs
 runtime! macros/matchit.vim
+
+inoremap jk <ESC> 
 
 " Move up/down editor lines
 nnoremap j gj
@@ -48,7 +53,7 @@ set showmode
 set showcmd
 
 
-set foldmethod=indent
+"set foldmethod=indent
 set updatetime=100
 
 " Searching
