@@ -1,24 +1,27 @@
 " Don't try to be vi compatible
 set autoread
-set mouse=a
 set path+=**
 "set hidden
-set number
+set rnu!
 set nocompatible
 set wildmenu
-
-
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Backspace>	<Nop>
+syntax on
 set noswapfile
 
 
 "compile c++
-nnoremap <F5> :!g++ -std=c++17 -Wshadow -Wall -o a *.cpp -O2 -Wno-unused-result
+nnoremap <F2> :!g++ -std=c++17 -Wshadow -Wall -o a *.cpp -O2 -Wno-unused-result
 "build c++
-nnoremap <F4> :!g++ -std=c++17 -Wshadow -Wall -o a *.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
+nnoremap <F3> :!g++ -std=c++17 -Wshadow -Wall -o a *.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
 "run
-nnoremap <F2> ./a
+nnoremap <F1> ./a
 "clear
-nnoremap <F3> :!clear
+nnoremap <F4> :!clear
 set autoindent 
 set smartindent
 " Whitespace
@@ -33,7 +36,6 @@ set backspace=indent,eol,start
 set matchpairs+=<:> " use % to jump between pairs
 runtime! macros/matchit.vim
 
-inoremap jk <ESC> 
 
 " Move up/down editor lines
 nnoremap j gj
@@ -93,3 +95,9 @@ let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
 "colorscheme solarized
+
+
+
+"plugins
+
+
