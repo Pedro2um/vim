@@ -9,7 +9,7 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-inoremap <Backspace>	<Nop>
+
 syntax on
 set noswapfile
 
@@ -94,10 +94,21 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
-"colorscheme solarized
 
+
+
+
+""au InsertLeave * colorscheme darkblue
+"au InsertLeave * colorscheme molokai
 
 
 "plugins
+call plug#begin()
+Plug 'sickill/vim-monokai'
+call plug#end()
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+colorscheme monokai
+
 
 
